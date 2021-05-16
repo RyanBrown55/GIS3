@@ -33,11 +33,37 @@ devtools::install_github("RyanBrown55/GIS3")
 ## Example
 
 This is a basic example which shows you how to use the quickMap function with a spatial polygons data frame. The nyc data can be found in this package repository and is intended to be used by those who are interested in refining their skills in EDA. The nyc data is from the GeoDa data center
-(https://geodacenter.github.io/data-and-lab/) and pertains to demographic and rent characteristic of different NYC boroughs. 
+(https://geodacenter.github.io/data-and-lab/) and pertains to demographic and rent characteristic of different NYC subboroughs. 
 
 ``` r
 library(quickMap)
 df <- rgdal::readOGR("nyc.geojson")
 quickMap(df,df$rent2005,df$name)
 ```
+
+## Data
+
+As previously mentioned attached New York City (nyc.geojson) data pertains to demographic and rent characteristic of different NYC subboroughs from 2002 - 2009. 
+
+Here is a break down of the dataset from its source (https://geodacenter.github.io/data-and-lab/nyc/):
+
+
+Observations = 55
+Variables = 34
+Years = 1990-2009
+
+
+Variable 	    |                 Description	                                    | Source	 
+code	         | NYC Sub-Borough Neighborhood unique ID	 	                       | NA
+subborough	   | NYC Sub-Borough Neighborhood name	 	                            | NA
+forhis06-09   | Percentage of hispanic population, not born in US	New York City | Neighborhood Information by Furman Center Terms can be found at Furman Center.	 
+forwh06-09	   | Percentage of white population, not born in US                  |	same as above	 
+hhsiz1990	    | Average number of people per household	United States Census 2000| New York City Housing and Vacancy Survey.	 
+hhsiz00	      | Average number of people per household	                         | see above	 
+hhsiz02-05-08 |	Average number of people per household	                         | see above	 
+kids2000 -2009| Percentage households w kids under 18	United States Census 2000 | American Community Survey.	 
+rent2002,2005,2008 |	Median monthly contract rent	                              | New York City Housing and Vacancy Survey	 
+rentpct02,05,08	| Percentage of housing stock that is market rate rental units  |	New York City Housing and Vacancy Survey.	 
+pubast90,00 |	Percentage of households receiving public assistance.             |	United States Census	 
+yrhom02,05,08 |	Average number of years living in current residence	            | New York City Housing and Vacancy Survey.
 
