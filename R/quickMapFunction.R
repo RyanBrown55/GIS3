@@ -6,13 +6,19 @@
 #' @param column the data you would like to use for the choropleth map with quantile bins!
 #' @param labelcolumn unique identifier for areal units
 #' @return leaflet choropleth map with quantile bins
+#' @importFrom magrittr %>%
 #' @export
 
 
-quickMap <- function(df,column,labelcolumn){colorQuantile("BuPu", NULL)
-  leaflet::leaflet(df) %>%
-    addTiles() %>%
-    addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
-                fillColor = ~pal(column),
-                label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) %>%
-    addLegend(pal = pal, values = ~column, opacity = 1.0)}
+quickMap <- function(df,column,labelcolumn){
+  factpal <- leaflet::colorQuantile("BuPu", NULL)
+  m <-
+    leaflet::leaflet(df) %>%
+    leaflet::addTiles() %>%
+    leaflet::addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
+                         fillColor = ~factpal(column),
+                         label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) %>%
+    leaflet::addLegend(pal = factpal, values = ~column, opacity = 1.0)
+
+
+  return(m)}
