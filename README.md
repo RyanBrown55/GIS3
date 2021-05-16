@@ -32,7 +32,8 @@ devtools::install_github("RyanBrown55/GIS3")
 
 ## Example
 
-This is a basic example which shows you how to use the quickMap function with a spatial polygons data frame. 
+This is a basic example which shows you how to use the quickMap function with a spatial polygons data frame. The nyc data can be found in this package repository and is intended to be used by those who are interested in refining their skills in EDA. The nyc data is from the GeoDa data center
+(https://geodacenter.github.io/data-and-lab/) and pertains to demographic and rent characteristic of different NYC boroughs. 
 
 ``` r
 library(quickMap)
