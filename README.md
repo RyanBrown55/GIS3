@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of Quick Map is to enable users to create choropleth maps of spatial data in seconds! Create on OGR object and call the quickmap function with you data frame, column of interest and identifier column. After doing so a leaflet map using quantiles will be returned. One can then further optimize the map or analyze it as is.
+The goal of Quick Map is to enable users to create choropleth maps of spatial data in seconds! Create on OGR object and call the quickmap function with you data frame, column of interest and identifier column. After doing so a leaflet choropleth map which uses quantiles for binning will be returned. One can then further optimize the map or analyze it as is.
 
 This package was designed and refined entierly for Lab 7 in GIS III. It containts one function (quickMap) which is described above. The function is my own but is heavily influnced by this guide to leaflet: (https://learn.r-journalism.com/en/mapping/census_maps/census-maps/). 
 
